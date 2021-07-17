@@ -4,11 +4,13 @@ const { appConfig } = require("../config");
 const artistsSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,
+    required: "Please enter your name",
+    trim: true,
   },
   surname: {
     type: String,
-    required: true,
+    required: "Please enter your name",
+    trim: true,
   },
   dateofbirth: Date,
   dateofdeath: Date,
@@ -41,9 +43,7 @@ const artistsSchema = new mongoose.Schema({
     },
   },
   image: String,
-  tags: {
-    type: Array,
-  },
+  tags: String,
 });
 
 artistsSchema.methods.setImgUrl = function setImgUrl(filename) {

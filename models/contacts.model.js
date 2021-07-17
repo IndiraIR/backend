@@ -47,7 +47,7 @@ const contactsSchema = new mongoose.Schema({
     max: 255,
   },
   image: String,
-  type: Array
+  type: String
 });
 
 const contactsModel = mongoose.model("contact", contactsSchema);

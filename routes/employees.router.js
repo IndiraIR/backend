@@ -11,11 +11,11 @@ const {
   updateEmployee,
 } = require("../controllers/employees.controller");
 
-employeeRouter.get("/", auth, isAdmin, getAllEmployees);
+employeeRouter.get("/", getAllEmployees);
 employeeRouter.get("/filter", auth, isAdmin, filterEmployees);
-employeeRouter.get("/:employeeId", auth, isAdmin, getEmployee);
-employeeRouter.post("/", auth, isAdmin, createEmployee);
-employeeRouter.delete("/:employeeId", auth, isAdmin, deleteEmployee);
-employeeRouter.put("/:employeeId", auth, updateEmployee); /*tendría que ser solo la tuya*/
+employeeRouter.get("/:employeeId", getEmployee);
+employeeRouter.post("/", createEmployee);
+employeeRouter.delete("/:employeeId", deleteEmployee);
+employeeRouter.put("/:employeeId", updateEmployee);
 
 module.exports = employeeRouter;

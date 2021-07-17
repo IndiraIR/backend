@@ -15,6 +15,7 @@ function createArtist(req, res) {
     tags,
   } = req.body;
 
+  /*
   const artistObj = artistsModel({
     name,
     surname,
@@ -32,9 +33,13 @@ function createArtist(req, res) {
     const { filename } = req.file;
     artistObj.setImgUrl(filename);
   }
+  */
+  console.log(req.body)
   artistsModel
-    .create(artistObj)
+    .create(req.body)
     .then((artist) => {
+      console.log(artist);
+
       res.json(artist);
     })
     .catch((err) => {

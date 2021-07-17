@@ -11,11 +11,11 @@ const {
   updateContact,
 } = require("../controllers/contacts.controller");
 
-contactRouter.get("/", auth, isAdmin, getAllContacts);
+contactRouter.get("/", getAllContacts);
 contactRouter.get("/filter", auth, isAdmin, filterContacts);
-contactRouter.get("/:contactId", auth, isAdmin, getContact);
-contactRouter.post("/", auth, isAdmin, createContact);
-contactRouter.delete("/:contactId", auth, isAdmin, deleteContact);
-contactRouter.put("/:contactId", auth, updateContact); /*tendría que ser solo la tuya*/
+contactRouter.get("/:contactId", getContact);
+contactRouter.post("/", createContact);
+contactRouter.delete("/:contactId", deleteContact);
+contactRouter.put("/:contactId", updateContact);
 
 module.exports = contactRouter;

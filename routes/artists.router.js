@@ -19,6 +19,6 @@ artistRouter.get("/", getAllArtists);
 artistRouter.get("/:artistId", auth, isEmployee, getArtist);
 artistRouter.get("/filter", auth, isEmployee, filterArtists);
 artistRouter.delete("/:artistId", deleteArtist);
-artistRouter.put("/:artistId", auth, isEmployee, updateArtist);
+artistRouter.put("/:artistId", updateArtist);
 
 module.exports = artistRouter;
