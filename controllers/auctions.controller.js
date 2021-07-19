@@ -34,6 +34,7 @@ function updateAuction(req, res) {
       runValidators: true,
     })
     .then((auction) => {
+      console.log(auction)
       res.json(auction);
     })
     .catch((err) => handdleError(err, res));

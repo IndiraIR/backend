@@ -14,6 +14,7 @@ function getAllEmployees(req, res) {
 }
 
 function createEmployee(req, res) {
+  
   const hashed_password = bcrypt.hashSync(req.body.password, 10);
 
   const hashed_body = {
@@ -28,12 +29,14 @@ function createEmployee(req, res) {
   employeesModel
     .create(hashed_body)
     .then((employee) => {
+      
       const insideToken = {
         name: employee.name,
         surname: employee.surname,
         id: employee._id,
         type: employee.type,
       };
+
 
       const token = jwt.sign(insideToken, process.env.SECRET);
 
@@ -44,9 +47,11 @@ function createEmployee(req, res) {
         email: employee.email,
         token: token,
       };
+      
       res.json(resEmployee);
     })
     .catch((err) => {
+      console.log(err);
       res.json(err);
     });
 }
@@ -86,7 +91,6 @@ function deleteEmployee(req, res) {
 }
 
 function updateEmployee(req, res) {
-  console.log(req.params);
   employeesModel
     .findByIdAndUpdate(req.params.employeeId, req.body, {
       new: true,

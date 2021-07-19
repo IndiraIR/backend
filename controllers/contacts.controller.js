@@ -14,20 +14,21 @@ function getAllContacts(req, res) {
 }
 
 function createContact(req, res) {
-  const hashed_password = bcrypt.hashSync(req.body.password, 10);
+  // const hashed_password = bcrypt.hashSync(req.body.password, 10);
 
-  const hashed_body = {
-    name: req.body.name,
-    surname: req.body.surname,
-    type: req.body.type,
-    telephone: req.body.telephone,
-    email: req.body.email,
-    password: hashed_password,
-  };
+  // const hashed_body = {
+  //   name: req.body.name,
+  //   surname: req.body.surname,
+  //   type: req.body.type,
+  //   telephone: req.body.telephone,
+  //   email: req.body.email,
+  //   password: hashed_password,
+  // };
 
   contactsModel
-    .create(hashed_body)
+    .create(req.body)
     .then((contact) => {
+      console.log(contact);
       const insideToken = {
         name: contact.name,
         surname: contact.surname,
@@ -86,7 +87,6 @@ function deleteContact(req, res) {
 }
 
 function updateContact(req, res) {
-  console.log(req.params);
   contactsModel
     .findByIdAndUpdate(req.params.contactId, req.body, {
       new: true,

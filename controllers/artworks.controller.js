@@ -8,14 +8,15 @@ function getAllArtworks(req, res) {
       surname: 1,
     })
     .then((artworks) => {
-      console.log(artworks);
+    //console.log(artworks)
       res.json(
-        artworks.map((artwork) => {
+        artworks
+        /* artworks.map((artwork) => {
           let artists = artwork.artistId
             .map((artist) => artist.name)
             .join(", ");
-          return artists + ", " + artwork.title + ", " + artwork.year;
-        })
+            return artists + ", " + artwork.title + ", " + artwork.year; 
+          })*/
       );
     })
     .catch((err) => {

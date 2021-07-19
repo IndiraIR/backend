@@ -9,7 +9,7 @@ const documentsSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  documentType: {
+  documenttype: {
     type: String,
     enum: {
       values: ["Invoice", "Loan", "Certificate of Authenticity", "Contract"],

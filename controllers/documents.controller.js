@@ -61,6 +61,7 @@ function deleteDocument(req, res) {
 }
 
 function updateDocument(req, res) {
+  
   documentsModel
     .findByIdAndUpdate(req.params.documentId, req.body, {
       new: true,

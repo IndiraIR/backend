@@ -34,12 +34,10 @@ function createArtist(req, res) {
     artistObj.setImgUrl(filename);
   }
   */
-  console.log(req.body)
+
   artistsModel
     .create(req.body)
     .then((artist) => {
-      console.log(artist);
-
       res.json(artist);
     })
     .catch((err) => {

@@ -14,10 +14,10 @@ const {
 
 artworkRouter.get("/", getAllArtworks);
 artworkRouter.get("/auth/", auth, getAllArtworksAuth);
-artworkRouter.post("/", auth, isEmployee, createArtwork);
-artworkRouter.get("/filter", auth, filterArtworks);
+artworkRouter.post("/", isEmployee, createArtwork);
+artworkRouter.get("/filter",  filterArtworks);
 artworkRouter.get("/:artworkId", getArtwork);
-artworkRouter.delete("/:artworkId", auth, isEmployee, deleteArtwork);
-artworkRouter.put("/:artworkId", auth, isEmployee, updateArtwork);
+artworkRouter.delete("/:artworkId", deleteArtwork);
+artworkRouter.put("/:artworkId", updateArtwork);
 
 module.exports = artworkRouter;

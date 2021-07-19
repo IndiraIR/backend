@@ -12,11 +12,11 @@ const {
   updateDocument,
 } = require("../controllers/documents.controller");
 
-documentRouter.get("/", auth, isAdmin, getAllDocuments);
-documentRouter.post("/", auth, isAdmin, createDocument);
+documentRouter.get("/", getAllDocuments);
+documentRouter.post("/", createDocument);
 documentRouter.get("/filter", auth, isAdmin, filterDocuments);
-documentRouter.get("/:documentId", auth, isAdmin, getDocument);
-documentRouter.delete("/:documentId", auth, isAdmin, deleteDocument);
-documentRouter.put("/:documentId", auth, isAdmin, updateDocument);
+documentRouter.get("/:documentId", getDocument);
+documentRouter.delete("/:documentId", deleteDocument);
+documentRouter.put("/:documentId", updateDocument);
 
 module.exports = documentRouter;
