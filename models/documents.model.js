@@ -43,6 +43,7 @@ const documentsSchema = new mongoose.Schema({
       ref: "contact",
     },
   ],
+  client: String
 });
 
 const documentsModel = mongoose.model("document", documentsSchema);

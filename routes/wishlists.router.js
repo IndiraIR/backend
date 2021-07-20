@@ -12,10 +12,10 @@ const {
 } = require("../controllers/wishlists.controller");
 
 wishRouter.get("/", getAllWishs);
-wishRouter.post("/", auth, isEmployee, createWish);
-wishRouter.get("/filter", auth, filterWishs);
-wishRouter.get("/:artworkId", getWish);
-wishRouter.delete("/:artworkId", auth, isEmployee, deleteWish);
-wishRouter.put("/:artworkId", auth, isEmployee, updateWish);
+wishRouter.post("/", createWish);
+wishRouter.get("/filter", filterWishs);
+wishRouter.get("/:wishId", getWish);
+wishRouter.delete("/:wishId", deleteWish);
+wishRouter.put("/:wishId", updateWish);
 
 module.exports = wishRouter;

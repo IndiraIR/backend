@@ -66,7 +66,7 @@ function fakeData() {
     width = random(50, 500);
     height = random(50, 1500);
     depth = random(20, 60);
-    artwork = faker.image.abstract();
+    artwork = "https://source.unsplash.com/collection/881002";
 
     data.artworks.push({
       title: title,
@@ -90,6 +90,7 @@ function fakeData() {
       datesold: date,
       publish: true,
       artistId: [],
+      author: "Anonymus",
     });
   }
   return data;

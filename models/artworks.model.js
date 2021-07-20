@@ -7,6 +7,7 @@ const artworksSchema = new mongoose.Schema({
       ref: "artist",
     },
   ],
+  author: String,
   title: {
     type: String,
     required: true,
@@ -87,6 +88,8 @@ const artworksSchema = new mongoose.Schema({
     type: Number,
     default: "EUR",
   },
+  soldfor: Number,
+  notes: String,
   datesold: {
     type: Date,
   },

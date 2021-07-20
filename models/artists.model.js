@@ -44,6 +44,8 @@ const artistsSchema = new mongoose.Schema({
   },
   image: String,
   tags: String,
+  owners: String,
+  customers: String,
 });
 
 artistsSchema.methods.setImgUrl = function setImgUrl(filename) {
