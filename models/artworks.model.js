@@ -71,21 +71,21 @@ const artworksSchema = new mongoose.Schema({
     type: Number,
   },
   currencyoffered: {
-    type: Number,
+    type: String,
     default: "EUR",
   },
   pricebought: {
     type: Number,
   },
   currencybought: {
-    type: Number,
+    type: String,
     default: "EUR",
   },
   datebought: {
     type: String,
   },
   currencysold: {
-    type: Number,
+    type: String,
     default: "EUR",
   },
   soldfor: Number,

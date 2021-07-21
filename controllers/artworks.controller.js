@@ -40,6 +40,7 @@ function getAllArtworksAuth(req, res) {
 }
 
 function createArtwork(req, res) {
+  console.log(req)
   artworksModel
     .create(req.body)
     .then((artwork) => {

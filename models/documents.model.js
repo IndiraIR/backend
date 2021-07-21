@@ -27,7 +27,7 @@ const documentsSchema = new mongoose.Schema({
     type: Number,
   },
   currencybought: {
-    type: Number,
+    type: String,
     default: "EUR",
   },
   datebought: {

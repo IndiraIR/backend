@@ -14,7 +14,7 @@ const {
 
 artworkRouter.get("/", getAllArtworks);
 artworkRouter.get("/auth/", auth, getAllArtworksAuth);
-artworkRouter.post("/", isEmployee, createArtwork);
+artworkRouter.post("/", createArtwork);
 artworkRouter.get("/filter",  filterArtworks);
 artworkRouter.get("/:artworkId", getArtwork);
 artworkRouter.delete("/:artworkId", deleteArtwork);
