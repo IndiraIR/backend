@@ -12,12 +12,17 @@ const documentsSchema = new mongoose.Schema({
   documenttype: {
     type: String,
     enum: {
-      values: ["Invoice", "Loan", "Certificate of Authenticity", "Contract"],
+      values: [
+        "Factura",
+        "Préstamo",
+        "Certificado de Autenticidad",
+        "Contrato",
+      ],
       message: "{VALUE} is not supported",
     },
     required: true,
   },
-  date: { type: Date, default: Date.now },
+  date: { type: String },
   pricebought: {
     type: Number,
   },
@@ -26,7 +31,7 @@ const documentsSchema = new mongoose.Schema({
     default: "EUR",
   },
   datebought: {
-    type: Date,
+    type: String,
   },
   namefile: {
     type: String,
@@ -43,7 +48,8 @@ const documentsSchema = new mongoose.Schema({
       ref: "contact",
     },
   ],
-  client: String
+  client: String,
+  artwork: String,
 });
 
 const documentsModel = mongoose.model("document", documentsSchema);
