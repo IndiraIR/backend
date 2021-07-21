@@ -4,8 +4,8 @@ const { handdleError } = require("../utils/functions");
 function getAllDocuments(req, res) {
   documentsModel
     .find()
-    .populate("artwork")
-    .populate("contactsId", "name")
+    .populate("artworkId")
+    .populate("contactId", "name")
     .then((documents) => {
       res.json(documents);
     })
@@ -61,7 +61,6 @@ function deleteDocument(req, res) {
 }
 
 function updateDocument(req, res) {
-  
   documentsModel
     .findByIdAndUpdate(req.params.documentId, req.body, {
       new: true,

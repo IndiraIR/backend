@@ -36,7 +36,7 @@ function fakeData() {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
-  for (let i = 0; i < 25; i++) {
+  for (let i = 0; i < 10; i++) {
     name = faker.name.firstName();
     surname = faker.name.lastName();
     image = faker.image.avatar();
@@ -66,9 +66,23 @@ function fakeData() {
     width = random(50, 500);
     height = random(50, 1500);
     depth = random(20, 60);
-    artwork = faker.image.abstract();
+    artwork = "https://source.unsplash.com/collection/881002";
 
-    data.artworks.push({
+    data.documents.push({
+      documentNo: password,
+      title: title,
+      documenttype: "Contrato",
+      date: "1010-02-15",
+      pricebought: height,
+      currencybought: "EUR",
+      datebought: "1810-12-05",
+      namefile: artwork,
+      artworkId: [],
+      contactId: [],
+      client: "",
+      artwork: "",
+    });
+    /*data.artworks.push({
       title: title,
       year: year,
       stockNo: password,
@@ -90,7 +104,8 @@ function fakeData() {
       datesold: date,
       publish: true,
       artistId: [],
-    });
+      author: "Anonymus",
+    });*/
   }
   return data;
 }

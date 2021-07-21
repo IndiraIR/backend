@@ -4,8 +4,7 @@ const { handleError } = require("../utils/functions");
 
 
 function createWish(req, res) {
-  console.log(req.body);
-  wishlistsModel
+   wishlistsModel
     .create(req.body)
     .then((wish) => {
       res.json(wish);
@@ -41,6 +40,7 @@ function updateWish(req, res) {
 }
 
 function deleteWish(req, res) {
+  console.log(req.params)
   wishlistsModel
     .deleteOne({ _id: req.params.wishId })
     .then((wish) => {

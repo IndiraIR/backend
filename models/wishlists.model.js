@@ -13,6 +13,12 @@ const wishlistsSchema = new mongoose.Schema({
     type: Number,
   },
   image: String,
+  artists: String,
+  medium: {
+    type: String,
+  },
+  contact: String,
+  link: String,
 });
 
 const wishlistsModel = mongoose.model("wishlist", wishlistsSchema);

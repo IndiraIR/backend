@@ -8,7 +8,7 @@ function getAllArtworks(req, res) {
       surname: 1,
     })
     .then((artworks) => {
-    //console.log(artworks)
+      //console.log(artworks)
       res.json(
         artworks
         /* artworks.map((artwork) => {
@@ -62,13 +62,10 @@ function getArtwork(req, res) {
       let author = "";
       for (let i = 0; i < artwork.artistId.length; i++) {
         author +=
-           " " +
-          artwork.artistId[i].name +
-          " " +
-          artwork.artistId[i].surname ;
-          if( i < artwork.artistId.length-1  ) author += ", ";
+          " " + artwork.artistId[i].name + " " + artwork.artistId[i].surname;
+        if (i < artwork.artistId.length - 1) author += ", ";
       }
-      author="[ " + author + " ]"
+      author = "[ " + author + " ]";
       res.json(`${author}, ${artwork.title}, ${artwork.year}`);
     })
     .catch((err) => {
