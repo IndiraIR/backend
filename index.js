@@ -7,7 +7,7 @@ const morgan = require("morgan");
 const router = require("./routes/index");
 
 mongoose.connect(
-  process.env.DB_HOST + ":" + process.env.DB_PORT,
+  process.env.MONGO_URL + ":" + process.env.DB_PORT,
   {
     dbName: process.env.DB_NAME || "test",
     useNewUrlParser: true,

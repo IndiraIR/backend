@@ -13,7 +13,7 @@ const artworksSchema = new mongoose.Schema({
     default: "Untitled",
   },
   year: {
-    type: Number, // Poner como date o máximo 4 dígitos
+    type: String, // Poner como date o máximo 4 dígitos
   },
   stockNo: {
     type: String,
@@ -24,7 +24,7 @@ const artworksSchema = new mongoose.Schema({
   location: {
     type: String,
     enum: {
-      values: ["On Display", "Storage", "On Loan", "Owner"],
+      values: ["Triana", "Gáldar", "Prestada", "Propietario"],
       message: "{VALUE} is not supported",
     },
   },
@@ -40,14 +40,14 @@ const artworksSchema = new mongoose.Schema({
   condition: {
     type: String,
     enum: {
-      values: ["Excellent", "Good", "Fair", "Damaged"],
+      values: ["Excelente", "Buena", "Revisar", "Dañada"],
       message: "{VALUE} is not supported",
     },
   },
   status: {
     type: String,
     enum: {
-      values: ["Available", "On Hold", "Sold"],
+      values: ["Disponible", "Reservada", "Vendida"],
       message: "{VALUE} is not supported",
     },
   },
@@ -81,14 +81,14 @@ const artworksSchema = new mongoose.Schema({
     default: "EUR",
   },
   datebought: {
-    type: Date,
+    type: String,
   },
   currencysold: {
     type: Number,
     default: "EUR",
   },
   datesold: {
-    type: Date,
+    type: String,
   },
   publish: {
     type: Boolean,
