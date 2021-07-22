@@ -11,8 +11,7 @@ const artworksSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
-    default: "Untitled",
-  },
+    },
   year: {
     type: String, // Poner como date o máximo 4 dígitos
   },

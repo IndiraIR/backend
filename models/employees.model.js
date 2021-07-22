@@ -47,7 +47,7 @@ const employeesSchema = new mongoose.Schema({
   type: {
     type: String,
     enum: {
-      values: ["Admin", "Employee"],
+      values: ["Admin", "Empleado"],
       message: "{VALUE} is not supported",
     },
     default: "Employee",

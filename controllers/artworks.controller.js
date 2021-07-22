@@ -108,9 +108,9 @@ function updateArtwork(req, res) {
   artworksModel
     .findByIdAndUpdate(req.params.artworkId, req.body, {
       new: true,
-      runValidators: true,
+      runValidators: false,
     })
-    .populate("artistId", {
+  .populate("artistId", {
       name: 1,
       surname: 1,
     })

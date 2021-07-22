@@ -12,8 +12,8 @@ const artistsSchema = new mongoose.Schema({
     required: "Please enter your name",
     trim: true,
   },
-  dateofbirth: Date,
-  dateofdeath: Date,
+  dateofbirth: String,
+  dateofdeath: String,
   country: {
     type: String,
   },
