@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const { appConfig } = require("../config");
 
 const artistsSchema = new mongoose.Schema({
   name: {

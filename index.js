@@ -7,7 +7,7 @@ const morgan = require("morgan");
 const router = require("./routes/index");
 
 mongoose.connect(
-  process.env.MONGO_URL + ":" + process.env.DB_PORT,
+  process.env.MONGO_URL_PROD ,
   {
     dbName: process.env.DB_NAME || "test",
     useNewUrlParser: true,
@@ -28,13 +28,13 @@ const app = express()
   .use(express.json())
   .use("/api", router);
 
-app.listen(process.env.APP_PORT, (err) => {
+app.listen(process.env.PORT, (err) => {
   if (err) {
     throw new Error(err);
   }
   console.info(">".repeat(40));
   console.info("Reboot Server life");
   console.info("HOST: ", process.env.APP_HOST);
-  console.info("PORT: ", process.env.APP_PORT);
+  console.info("PORT: ", process.env.PORT);
   console.info(">".repeat(40) + "\n");
 });
