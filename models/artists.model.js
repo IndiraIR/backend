@@ -48,10 +48,6 @@ const artistsSchema = new mongoose.Schema({
   customers: String,
 });
 
-artistsSchema.methods.setImgUrl = function setImgUrl(filename) {
-  const { host, port } = appConfig;
-  this.image = `${host}:${port}/public/${filename}`;
-};
 
 const artistsModel = mongoose.model("artist", artistsSchema);
 module.exports = artistsModel;

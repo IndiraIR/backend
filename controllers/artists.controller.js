@@ -2,7 +2,8 @@ const artistsModel = require("../models/artists.model");
 const { handleError } = require("../utils/functions");
 
 function createArtist(req, res) {
-  const {
+
+  /* const {
     name,
     surname,
     dateofbirth,
@@ -15,7 +16,7 @@ function createArtist(req, res) {
     tags,
   } = req.body;
 
-  /*
+  
   const artistObj = artistsModel({
     name,
     surname,
@@ -38,6 +39,7 @@ function createArtist(req, res) {
   artistsModel
     .create(req.body)
     .then((artist) => {
+      console.log(artist)
       res.json(artist);
     })
     .catch((err) => {
@@ -62,7 +64,7 @@ function updateArtist(req, res) {
   artistsModel
     .findByIdAndUpdate(req.params.artistId, req.body, {
       new: true,
-      runValidators: true,
+      runValidators: false,
     })
     .then((artist) => {
       res.json(artist);

@@ -64,7 +64,7 @@ function updateDocument(req, res) {
   documentsModel
     .findByIdAndUpdate(req.params.documentId, req.body, {
       new: true,
-      runValidators: true,
+      runValidators: false,
     }) //returnNewDocument : true
     //save?
     .then((document) => res.json(document))
