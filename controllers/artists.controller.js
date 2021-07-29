@@ -39,7 +39,6 @@ function createArtist(req, res) {
   artistsModel
     .create(req.body)
     .then((artist) => {
-      console.log(artist)
       res.json(artist);
     })
     .catch((err) => {

@@ -1,6 +1,18 @@
 const mongoose = require("mongoose");
 
 const artistsSchema = new mongoose.Schema({
+  ownersId: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "contact",
+    },
+  ],
+  customersId: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "contact",
+    },
+  ],
   name: {
     type: String,
     required: "Please enter your name",
@@ -46,7 +58,6 @@ const artistsSchema = new mongoose.Schema({
   owners: String,
   customers: String,
 });
-
 
 const artistsModel = mongoose.model("artist", artistsSchema);
 module.exports = artistsModel;
