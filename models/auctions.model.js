@@ -1,6 +1,12 @@
 const mongoose = require("mongoose");
 
 const auctionsSchema = new mongoose.Schema({
+  artistsId: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "artist",
+    },
+  ],
   title: { type: String, required: true },
   date: { type: String, required: true },
   time: { type: String },
